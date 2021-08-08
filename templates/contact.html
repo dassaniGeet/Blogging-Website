@@ -56,6 +56,13 @@
                         <br />
                         <div id="success"></div>
                         <button class="btn btn-primary" id="sendMessageButton" type="submit">Send</button>
+                        {% with messages = get_flashed_messages() %}
+                            {% if messages %}
+                                {% for message in messages %}
+                                    <h>{{ message }}</h>
+                                {% endfor %}
+                            {% endif %}
+                        {% endwith %}
                     </form>
                 </div>
             </div>

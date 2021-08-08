@@ -137,7 +137,11 @@ def contact():
             }
         }
 
-        db.child("Contacts").push(data)
+        if data['Name'] != "" and data['Email'] != "" and data['Phone'] != "" and data['Message'] != "":
+            db.child("Contacts").push(data)
+            flash('Thank You for contacting!')
+        else:
+            flash('Please Enter Valid Data')
 
         s = smtplib.SMTP('smtp.gmail.com', 587)
         new_msg = EmailMessage()
