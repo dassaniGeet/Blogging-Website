@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block body %}
+
+
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('static/assets/img/post.jpg')">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-10 mx-auto">
+                        <div class="post-heading">
+                            <h1>{{new_post['details']['title']}}</h1>
+                            <span class="meta">
+                                Posted by
+                                <a href="#!">{{new_post['details']['name']}}</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Post Content-->
+        <article>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-10 mx-auto">
+                        {{new_post['details']['content']}}
+                    </div>
+                </div>
+            </div>
+        </article>
+        <hr />
+        <!-- Bootstrap core JS-->
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
+{% endblock %}

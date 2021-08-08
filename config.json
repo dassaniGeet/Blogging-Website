@@ -1,0 +1,17 @@
+{
+
+    "params":
+    {
+        "local_server": "True",
+        "local_uri": "https://wishingblog-1fd30-default-rtdb.firebaseio.com",
+        "prod_uri": "https://wishingblog-1fd30-default-rtdb.firebaseio.com",
+        "fb_url": "https://facebook.com/wishingblog",
+        "tw_url": "https://twitter.com/wishingblog",
+        "gh_url": "https://github.com/wishingblog",
+        "gmail-user": "geetdassani93@gmail.com",
+        "gmail-pass": "waheguru@93",
+        "admin_user": "geetdassani93@gmail.com",
+        "admin_password":"12345"
+    }
+
+}

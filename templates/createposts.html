@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+{% block body %}
+
+
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('static/assets/img/post.jpg')">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-10 mx-auto">
+                        <div class="page-heading">
+                            <h1>Wish Here</h1>
+                            <span class="subheading">Share All Your Secret Wishes.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <p>Create The Your Post</p>
+                    <!-- Contact Form - Enter your email address on line 19 of the mail/contact_me.php file to make this form work.-->
+                    <!-- WARNING: Some web hosts do not allow emails to be sent through forms to common mail hosts like Gmail or Yahoo. It's recommended that you use a private domain email address!-->
+                    <!-- To use the contact form, your site must be on a live web host with PHP! The form will not work locally!-->
+                    <form id="contactForm" name="sentMessage" action="/createposts" method="post" novalidate>
+                         <div class="control-group">
+                            <div class="form-group floating-label-form-group controls">
+                                <label>Slug</label>
+                                <input class="form-control" id="slug" type="text" placeholder="Post No'" name='slug' required data-validation-required-message="Please enter SNo'." />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        <div class="control-group">
+                            <div class="form-group floating-label-form-group controls">
+                                <label>Name</label>
+                                <input class="form-control" id="name" type="text" placeholder="Created By'" name='name' required data-validation-required-message="Please enter your name" />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="form-group floating-label-form-group controls">
+                                <label>Title</label>
+                                <input class="form-control" id="title" type="text" placeholder="Title" name="title" required data-validation-required-message="Please enter your post title." />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Content</label>
+                                <input class="form-control" id="content" type="text" placeholder="Content" name = "content" required data-validation-required-message="Please enter content." />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <br />
+                        <div id="success"></div>
+                        <button class="btn btn-primary" id="sendMessageButton" type="submit">Send</button>
+                        {% with messages = get_flashed_messages() %}
+                            {% if messages %}
+                                {% for message in messages %}
+                                    <h>{{ message }}</h>
+                                {% endfor %}
+                            {% endif %}
+                        {% endwith %}
+                    </form>
+                </div>
+            </div>
+        </div>
+
+{% endblock %}

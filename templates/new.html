@@ -1,0 +1,18 @@
+{% if images %}
+        {% for i in images %}
+        <div class="float-container">
+            <ul class="list-unstyled components mb-5">
+            
+            <li class="active">
+            <div class="float-child">
+                <div class="green"><img src="{{url_for('static', filename='')}}{{i}}" alt="File1" style="border: 2px solid red;"/></div>
+            </div>
+            
+            <div class="float-child">
+                <div class="blue"><img src="{{url_for('static', filename='')}}{{ocr[{{loop.counter:}}]}}" alt="File1" style="border: 2px solid red;"/></div>
+            </div>
+            </li>
+        
+        </div>
+        {% endfor %}
+        {% endif %}

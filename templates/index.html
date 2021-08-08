@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% block body %}
+        <!-- Page Header-->
+    <header class="masthead" style="background-image: url('static/assets/img/home-bg.jpg')">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-10 mx-auto">
+                        <div class="site-heading">
+                            <h1>Wishing Blog</h1>
+                            <span class="subheading">A Blog to Hell!</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+            
+
+                {% for post in posts.each() | reverse %}
+                    <div class="post-preview">
+                        <a href="/post/{{post.val()['slug']}}">
+                            <h2 class="post-title">{{post.val()['details']['title']}}</h2>
+                        </a>
+                        <p class="post-meta">
+                            Posted by
+                            <a href="#!">{{post.val()['details']['name']}}</a>
+                        </p>
+                    </div>
+                    {{post.val()['details']['content'][0:45]}}...
+                    <hr />
+                {%endfor %}
+
+                    
+                    <!-- Pager-->
+                    
+                </div>
+            </div>
+        </div>
+        {% endblock %}
